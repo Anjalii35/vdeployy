@@ -79,13 +79,13 @@ export default function Hero({ onGetStarted, onWatchDemo }) {
             </p>
             <p className="flex items-center gap-2">
               <span className="text-cyan-500/70">$</span>
-              <span className="text-neutral-300 font-semibold text-white">vdeploy deploy --slug my-app</span>
+              <span className="text-neutral-300 font-semibold text-white">vdeploy deploying to cloud...</span>
             </p>
           </div>
 
           <div className="mt-6 pt-4 border-t border-[#1a1a1e] flex items-center gap-2 text-[12px] text-emerald-400 font-medium">
             <span className="text-emerald-500">✓</span>
-            <span>Published at <span className="underline decoration-emerald-500/40 underline-offset-2 cursor-pointer hover:text-emerald-300">my-app.deployr.live</span></span>
+            <span>Published at <span className="underline decoration-emerald-500/40 underline-offset-2 cursor-pointer hover:text-emerald-300">vdeploy-project-frontend.s3-website-us-east-1.amazonaws.com</span></span>
           </div>
         </div>
 
