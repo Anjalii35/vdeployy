@@ -181,7 +181,7 @@ public class DeploymentService {
     }
 
     private String runCommand(String command, String dir) throws Exception{
-        ProcessBuilder pb = new ProcessBuilder("sh", "/c", command)
+        ProcessBuilder pb = new ProcessBuilder("sh", "-c", command)
                 .redirectErrorStream(true);
 
         if(dir != null){
