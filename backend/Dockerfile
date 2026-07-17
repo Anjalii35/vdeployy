@@ -8,5 +8,9 @@ RUN mvn clean package -DskipTests
 # Stage 2 - Run jar
 FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
+
+# ADDED - install git and docker cli needed for deployment pipeline
+RUN apk add --no-cache git docker-cli
+
 COPY --from=build /app/target/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
