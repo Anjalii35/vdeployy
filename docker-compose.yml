@@ -8,6 +8,8 @@ services:
       - "5050:5050"
     env_file:
       - .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   
   # frontend
   frontend:
