@@ -80,7 +80,7 @@ public class DeploymentService {
         Deployment deployment = deploymentRepo.findById(deloymentId).orElseThrow(() -> new RuntimeException("Deployment Not Found"));
         Project project = deployment.getProject();
 
-        String cloneDir = "C:/tmp/vdeploy/build-" + deployment.getId();
+        String cloneDir = "/tmp/vdeploy/build-" + deployment.getId();
 
         StringBuilder logs = new StringBuilder();
         try{
@@ -107,7 +107,7 @@ public class DeploymentService {
             String nodeImage = detectNodeVersion(cloneDir);
             logs.append("Using Docker Image: " + nodeImage + "\n");
 
-            String dockerPAth = cloneDir.replace("C:","//c").replace("\\","/");
+            String dockerPAth = cloneDir;
             logs.append(runCommand(
                     "docker run --rm -v " + dockerPAth + ":/app -w /app " + nodeImage +
                             " sh -c \"npm install && NODE_OPTIONS=--openssl-legacy-provider " +
